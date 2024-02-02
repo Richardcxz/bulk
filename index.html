@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="1x1.png">
+    <title>Bulk Link Opener</title>
+</head>
+
+<body>
+    <p>paste your links here</p>
+    <p>(make sure to enable pop-ups on the website so it can work) </p>
+    <br>
+    <textarea></textarea>
+    <br><br>
+    <button onclick="openLinks()">submit links</button><br>
+
+    <script>
+        function openLinks() {
+            var textarea = document.querySelector('textarea');
+            var linkArray = textarea.value.split('\n').filter((e) => e.trim() !== "");
+
+            if (linkArray.length === 0) {
+                window.alert("Insert some links");
+                return;
+            }
+
+            var index = 0;
+            var interval = setInterval(function () {
+                if (index < linkArray.length) {
+                    window.open(linkArray[index]);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 5);
+        }
+    </script>
+</body>
+
+</html>
