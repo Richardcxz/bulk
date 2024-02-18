@@ -25,8 +25,9 @@ textarea{
 button {
     cursor: pointer;
     display: inline;
-    background-color: #0F0F0F;
     color: white;
+    border: none;
+    background-color: transparent;
 }
 
 @media only screen and (max-width: 600px) {
